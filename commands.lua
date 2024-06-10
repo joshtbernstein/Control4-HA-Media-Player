@@ -25,6 +25,7 @@ function DRV.OnDriverInit(init)
     C4:AddVariable("MEDIA_ARTIST", "", "STRING")
     C4:AddVariable("MEDIA_ALBUM", "", "STRING")
     C4:AddVariable("MEDIA_APP_NAME", "", "STRING")
+    C4:AddVariable("STATE", "", "STRING")
 end
 
 function DRV.OnDriverLateInit(init)
@@ -419,6 +420,7 @@ function MediaStateChanged()
     else
         C4:SendToDevice(C4:RoomGetId(), "SELECT_AUDIO_DEVICE", { deviceid = C4:GetProxyDevices() })
     end
+    C4:SetVariable("MEDIA_STATE", MEDIA_STATUS.STATE)
 end
 
 function XMLEncode(s)
