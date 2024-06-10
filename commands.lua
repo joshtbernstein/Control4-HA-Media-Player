@@ -420,7 +420,7 @@ function MediaStateChanged()
     else
         C4:SendToDevice(C4:RoomGetId(), "SELECT_AUDIO_DEVICE", { deviceid = C4:GetProxyDevices() })
     end
-    C4:SetVariable("MEDIA_STATE", MEDIA_STATUS.STATE)
+    C4:SetVariable("STATE", MEDIA_STATUS.STATE)
 end
 
 function XMLEncode(s)
